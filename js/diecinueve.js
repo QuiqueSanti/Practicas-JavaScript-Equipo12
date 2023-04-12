@@ -1,3 +1,4 @@
+var newContent
 function validaFechaMenor(campo){
         var bRet = false;
         var dHoy = new Date();
@@ -21,10 +22,10 @@ function validaFechaMenor(campo){
         		var sDia = "";
         		var nAnio=0, nMes=0, nDia = 0;
 
-        		if (valor.match(/^\d{2}\/\d{2}\/\d{4}$/)){
-        			nDia = parseInt(valor.substring(0,2), 10);
-        			nMes = parseInt(valor.substring(3,5), 10);
-        			nAnio = parseInt(valor.substring(6,10), 10);
+        		if (valor.substring(0,4)>0){
+        			nDia = parseInt(valor.substring(8,10));
+        			nMes = parseInt(valor.substring(5,7));
+        			nAnio = parseInt(valor.substring(0,4));
 
         			if (nDia <1 || nDia>31)
         				alert("El día no es válido")
@@ -61,35 +62,35 @@ var newDiv = document.createElement("div");
 
 
         if((nDia>20) && (nMes==3) || (nDia <=20) && (nMes==4))
-        var newContent = document.createTextNode("SIGNO ARIES");
+        newContent = document.createTextNode("SIGNO ARIES");
         else if ((nDia>20) && (nMes==4) || (nDia <=20) && (nMes==5))
-          var newContent = document.createTextNode("SIGNO TAURO");
+          newContent = document.createTextNode("SIGNO TAURO");
           else if ((nDia>20) && (nMes==5) || (nDia <=20) && (nMes==6))
-            var newContent = document.createTextNode("SIGNO GEMINIS");
+            newContent = document.createTextNode("SIGNO GEMINIS");
             else if ((nDia>20) && (nMes==6) || (nDia <=22) && (nMes==7))
-              var newContent = document.createTextNode("SIGNO CANCER");
+              newContent = document.createTextNode("SIGNO CANCER");
               else if ((nDia>22) && (nMes==7) || (nDia <=23) && (nMes==8))
-                var newContent = document.createTextNode("SIGNO LEO");
+                newContent = document.createTextNode("SIGNO LEO");
                 else if ((nDia>23) && (nMes==8) || (nDia <=22) && (nMes==9))
-                  var newContent = document.createTextNode("SIGNO VIRGO");
+                  newContent = document.createTextNode("SIGNO VIRGO");
                   else if ((nDia>22) && (nMes==9) || (nDia <=22) && (nMes==10))
-                    var newContent = document.createTextNode("SIGNO LIBRA");
+                    newContent = document.createTextNode("SIGNO LIBRA");
                     else if ((nDia>22) && (nMes==10) || (nDia <=22) && (nMes==11))
-                      var newContent = document.createTextNode("SIGNO ESCORPIO");
+                      newContent = document.createTextNode("SIGNO ESCORPIO");
                       else if ((nDia>22) && (nMes==11) || (nDia <=21) && (nMes==12))
-                        var newContent = document.createTextNode("SIGNO SAGITARIO");
+                        newContent = document.createTextNode("SIGNO SAGITARIO");
                         else if ((nDia>21) && (nMes==12) || (nDia <=21) && (nMes==1))
-                          var newContent = document.createTextNode("SIGNO CAPRICORNIO");
+                          newContent = document.createTextNode("SIGNO CAPRICORNIO");
                           else if ((nDia>21) && (nMes==1) || (nDia <=21) && (nMes==2))
-                            var newContent = document.createTextNode("SIGNO ACUARIO");
+                            newContent = document.createTextNode("SIGNO ACUARIO");
                             else if ((nDia>22) && (nMes==21) || (nDia <=23) && (nMes==3))
-                              var newContent = document.createTextNode("SIGNO PICIS");
+                              newContent = document.createTextNode("SIGNO PICIS");
 
 
 
 
 
-        //var newContent = document.createTextNode("SIGNO");
+        //var newContent = document.createTextNode("SIGNO")q;
         newDiv.appendChild(newContent); //añade texto al div creado.
 
          // añade el elemento creado y su contenido al DOM
@@ -104,7 +105,7 @@ function generarNumeroAleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 var numeroAleatorio = generarNumeroAleatorio(1, 100);
-
+console.log(newContent.textContent)
         
 var div1 = document.createElement("div");
 
@@ -114,8 +115,46 @@ div1.textContent = numeroAleatorio; // Establecer texto dentro del div1
 // Añadir clases a los divs (opcional)
 div1.classList.add("mi-clase"); // Añadir la clase "mi-clase" al div1
 
+switch(newContent.textContent){
+  case "SIGNO ARIES":
+    div1.style="border: 3px solid #999999; background-color:#F4FA58; width: 80px ;height:100px ";
+    break;
+  case "SIGNO TAURO":
+    div1.style="border: 3px solid #999999; background-color:#F781F3; width: 80px ;height:100px ";
+    break;
+  case "SIGNO GEMINIS":
+    div1.style="border: 3px solid #999999; background-color:#58FA58; width: 80px ;height:100px ";
+    break;
+  case "SIGNO CANCER":
+    div1.style="border: 3px solid #999999; background-color:#FF0040; width: 80px ;height:100px ";
+    break;
+  case "SIGNO LEO":
+    div1.style="border: 3px solid #999999; background-color:#DBA901; width: 80px ;height:100px ";
+    break;
+  case "SIGNO VIRGO":
+    div1.style="border: 3px solid #999999; background-color:#2E9AFE; width: 80px ;height:100px ";
+    break;
+  case "SIGNO LIBRA":
+    div1.style="border: 3px solid #999999; background-color:#2EFEF7; width: 80px ;height:100px ";
+    break;
+  case "SIGNO ESCORPIO":
+    div1.style="border: 3px solid #999999; background-color:#B4045F; width: 80px ;height:100px ";
+    break;
+  case "SIGNO SAGITARIO":
+    div1.style="border: 3px solid #999999; background-color:#868A08; width: 80px ;height:100px ";
+    break;
+  case "SIGNO CAPRICORNIO":
+    div1.style="border: 3px solid #999999; background-color:#642EFE; width: 80px ;height:100px ";
+    break;
+  case "SIGNO ACUARIO":
+    div1.style="border: 3px solid #999999; background-color:#81F7F3; width: 80px ;height:100px ";
+    break;
+  case "SIGNO PICIS":
+    div1.style="border: 3px solid #999999; background-color:#DF01D7; width: 80px ;height:100px ";
+    break; 
+}
 // Añadir los divs al DOM
 document.body.appendChild(div1); // Añadir div1 como un hijo del body
-div1.style="border: 3px solid #999999; background-color:#370099; width: 80px ;height:100px ";
+
 
 }
