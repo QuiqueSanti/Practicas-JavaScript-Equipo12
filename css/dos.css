@@ -1,0 +1,29 @@
+body {
+	font: 15px Arial, Helvetica,sans-serif;
+	padding:0;
+  	margin:0;
+  	background-color:#D6F7E4;
+}
+
+.contenido {
+	margin: auto;
+	overflow: hidden;
+	width: 80%;
+}
+
+header {
+  	background:#900C3F;
+  	color:#FFFFFF;
+  	padding-top:30px;
+  	min-height:70px;
+  	border-bottom:#FFC300 5px solid;
+}
+
+footer {
+	margin-top: 250px;
+}
+
+header p {
+	text-align: center;
+	font-size: 30px;
+}
